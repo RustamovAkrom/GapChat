@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% include 'gap/comment-cart.html' %}
+
+    {% for comment in comments %}
+        <div class="card">
+            <div class="card-header">
+                {{ comment.author }}
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Like {{ comment.comments.like_count }}</h5>
+                <p class="card-text">{{ comment.body }}</p>
+                <a href="{% url 'gap:comment-like' comment.pk %}" class="btn btn-primary">Like</a>
+            </div>
+        </div>
+    {% empty %}
+    <h5 class="mt-4">Now comment</h5>
+    {% endfor %}
+
+{% endblock %}

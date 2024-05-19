@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block title %} Opinions {% endblock %}
+{% block content %}
+    {% for opinion in opinions %}
+        {% include 'gap/comment-cart.html' %}
+    {% endfor %}
+{% endblock %}

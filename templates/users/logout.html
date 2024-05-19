@@ -1,0 +1,16 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block title %} Registration {% endblock %}
+
+{% block content %}
+<div class="container">
+  <h3>You are logout ?</h3>
+  <form action="{% url 'users:logout' %}" method="post">
+    {% csrf_token %}
+    <button type="submit">logout</button>
+    <a href="{% url 'gap:rooms' %}">
+      <button>Cancel</button>
+    </a>
+  </form>
+</div>
+{% endblock %}
